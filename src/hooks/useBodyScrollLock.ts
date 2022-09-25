@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+
 type TypeUseScrollLock = (initialLocked: boolean) => void;
 
 export const useBodyScrollLock: TypeUseScrollLock = (initialLocked = false) => {
@@ -28,7 +29,7 @@ export const useBodyScrollLock: TypeUseScrollLock = (initialLocked = false) => {
     if (locked !== initialLocked) {
       setLocked(initialLocked);
     }
-  }, [initialLocked]);
+  }, [locked, initialLocked]);
 
   return [locked, setLocked];
 };

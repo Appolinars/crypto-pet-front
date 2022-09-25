@@ -28,7 +28,7 @@ const UserStatistic: FC = () => {
 
   useEffect(() => {
     dispatch(getStatistic());
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
@@ -56,7 +56,7 @@ const UserStatistic: FC = () => {
         )}
         {!isLoading && !error && statistic?.totalExpances === 0 && (
           <div className="text-center">
-            <p>Looks like you don't have any notes and transactions yet...</p>
+            <p>Looks like you do not have any notes and transactions yet...</p>
             <p>
               <Link href="/create-note">
                 <a className="mr-1 underline underline-offset-2 hover:no-underline text-secondaryColor">

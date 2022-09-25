@@ -27,13 +27,13 @@ const Dashboard: FC = () => {
 
   useEffect(() => {
     if (notesList.length === 0) dispatch(getNotes());
-  }, []);
+  }, [notesList.length, dispatch]);
 
   useEffect(() => {
     return () => {
       dispatch(resetAllNotesStates());
     };
-  }, []);
+  }, [dispatch]);
 
   return (
     <section className="container h-full">
@@ -51,7 +51,7 @@ const Dashboard: FC = () => {
         </div>
       )}
       {!isLoading && notesList.length === 0 && (
-        <div className="text-lg">Looks like you don't have any notes yet...</div>
+        <div className="text-lg">Looks like you do not have any notes yet...</div>
       )}
     </section>
   );

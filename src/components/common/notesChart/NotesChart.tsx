@@ -38,7 +38,7 @@ const NotesChart: FC = () => {
 
   useEffect(() => {
     if (notesList.length === 0) dispatch(getNotes());
-  }, []);
+  }, [notesList.length, dispatch]);
 
   return (
     <>

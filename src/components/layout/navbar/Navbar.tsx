@@ -40,6 +40,7 @@ const Navbar: FC = () => {
 
   useEffect(() => {
     if (burgerActive) setBurgerActive(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [asPath]);
 
   const handleLogout = () => {
