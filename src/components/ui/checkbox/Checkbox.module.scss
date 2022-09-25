@@ -1,0 +1,40 @@
+.label {
+  font-size: 14px;
+  padding-left: 25px;
+  position: relative;
+  cursor: pointer;
+
+  span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #ccc;
+    outline: none;
+    transition: 0.4s;
+    position: absolute;
+    top: 1px;
+    left: 0;
+    will-change: transform;
+  }
+}
+
+.input {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+
+  &:checked {
+    & + span {
+      border-left: none;
+      border-top: none;
+      width: 7px;
+      border-color: #0f0;
+      transform: rotate(45deg) translate(6px, -8px);
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@import '@/styles/variables';
+
+.table_wrapper {
+  overflow-x: auto;
+  @include custom-scrollbar;
+}
+
+.table {
+  table-layout: auto;
+  width: 100%;
+  min-width: 800px;
+  th,
+  td {
+    padding: 5px;
+  }
+
+  @media (min-width: 768px) {
+    th,
+    td {
+      padding: 10px;
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: $color-dark-primary;
+  }
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    background-color: $color-dark-primary;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: $color-accent;
+  }
+}

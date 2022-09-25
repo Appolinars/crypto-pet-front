@@ -1,0 +1,30 @@
+@import '@/styles/variables';
+
+.info_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+
+  @media (min-width: 1024px) {
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  li {
+    font-size: 15px;
+    color: $color-dark-primary;
+    padding: 5px;
+    background-color: #b6b6b6;
+    border-radius: 5px;
+
+    @media (min-width: 768px) {
+      font-size: 18px;
+      padding: 10px;
+    }
+  }
+
+  &_title {
+    font-weight: 700;
+  }
+}

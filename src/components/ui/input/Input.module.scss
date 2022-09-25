@@ -1,0 +1,25 @@
+@import '@/styles/variables';
+
+.input_container {
+  & + .input_container {
+    margin-top: 30px;
+  }
+
+  input {
+    box-shadow: 0px 0 5px transparent;
+    transition: box-shadow 0.4s;
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 30px rgb(55, 65, 81) inset;
+      -webkit-text-fill-color: $color-light-primary;
+    }
+
+    &:focus,
+    &:hover {
+      box-shadow: 0px 0 5px rgba($color-secondary, 70%);
+    }
+  }
+}
