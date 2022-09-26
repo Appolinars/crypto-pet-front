@@ -4,8 +4,6 @@ import { FC, PropsWithChildren } from 'react';
 
 import { onlyText } from '@/utils/index';
 
-import ogLogo from '/public/static/images/og-logo.jpg';
-
 interface IMeta extends PropsWithChildren {
   title: string;
   description?: string;
@@ -17,6 +15,8 @@ export const Meta: FC<IMeta> = ({ title, description, image = null, children }) 
   const currentUrl = `${process.env.NEXT_PUBLIC_APP_URL}${asPath}`;
 
   const siteName = 'Crypto notebook';
+
+  const ogLogo = `${process.env.NEXT_PUBLIC_APP_URL}/static/images/og-logo.jpg`;
 
   return (
     <>
