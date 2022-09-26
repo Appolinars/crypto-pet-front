@@ -1,5 +1,6 @@
 import { ChangeEvent } from 'react';
 
+
 export const errorCatch = (error: any): string =>
   (error.response && error.response.data && typeof error.response.data.message === 'object'
     ? error.response.data.message[0]
@@ -16,7 +17,7 @@ export const onlyText = (_string: string, limit: null | number = null): string =
       ''
     );
 
-  if (limit) result = result.slice(0, limit) + '...';
+  if (limit && _string.length > limit) result = result.slice(0, limit) + '...';
 
   return result;
 };

@@ -30,7 +30,7 @@ export const Meta: FC<IMeta> = ({ title, description, image = null, children }) 
           <meta property="og:title" content={`${title} | ${siteName}`} />
           <meta property="og:url" content={currentUrl} />
           <meta property="og:image" content={image || ogLogo} />
-          <meta property="og:site_name" content={`${siteName}`} />
+          <meta property="og:site_name" content={siteName} />
           <meta property="og:description" content={onlyText(description, 197)} />
         </Head>
       ) : (
