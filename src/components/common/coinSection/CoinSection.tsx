@@ -10,7 +10,7 @@ import { useOnScreen } from '@/hooks/useOnScreen';
 
 import CoinSectionInfo from './CoinSectionInfo';
 
-const DynamicCoinChart = dynamic(() => import('../coinChart/CoinChart'));
+const DynamicCoinChart = dynamic(() => import('../coinChart/CoinChart'), { ssr: false});
 
 const CoinSection: FC<{ coinSymbol: string; coinTitle: string }> = ({ coinSymbol, coinTitle }) => {
   const [skip, setSkip] = useState<boolean>(true);

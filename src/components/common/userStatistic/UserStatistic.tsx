@@ -16,7 +16,7 @@ import { useToastError } from '@/hooks/useToastError';
 
 import UserStatisticItem from './UserStatisticItem';
 
-const DynamicNotesChart = dynamic(() => import('../notesChart/NotesChart'));
+const DynamicNotesChart = dynamic(() => import('../notesChart/NotesChart'), { ssr: false });
 
 const UserStatistic: FC = () => {
   const statistic = useAppSelector(statisticSelector);

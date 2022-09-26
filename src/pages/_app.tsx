@@ -11,8 +11,9 @@ import { colorAccent } from '@/configs/constants';
 
 import '@/styles/app.scss';
 
-const DynamicToastContainer = dynamic<ToastContainerProps>(() =>
-  import('react-toastify').then((mod) => mod.ToastContainer)
+const DynamicToastContainer = dynamic<ToastContainerProps>(
+  () => import('react-toastify').then((mod) => mod.ToastContainer),
+  { ssr: false }
 );
 
 type TypeAppProps = AppProps & TypeComponentAuthFields;

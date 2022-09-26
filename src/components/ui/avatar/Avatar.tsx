@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { FC } from 'react';
 import { IUser } from 'src/shared/types/authTypes';
 
-const DynamicGeneratedAvatar = dynamic(() => import('./GeneratedAvatar'));
+const DynamicGeneratedAvatar = dynamic(() => import('./GeneratedAvatar'), { ssr: false });
 
 const Avatar: FC<{ user: IUser; className?: string }> = ({ user, className }) => {
   return (
