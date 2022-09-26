@@ -4,7 +4,7 @@ import { FC, PropsWithChildren } from 'react';
 
 import { onlyText } from '@/utils/index';
 
-import ogLogo from '@/images/og-logo.jpg';
+import ogLogo from '/public/static/images/og-logo.jpg';
 
 interface IMeta extends PropsWithChildren {
   title: string;
