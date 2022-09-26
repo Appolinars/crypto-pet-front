@@ -61,7 +61,7 @@ const CoinSection: FC<{ coinSymbol: string; coinTitle: string }> = ({ coinSymbol
           <div className="text-2xl text-red-500">Something went wrong. Please try again later.</div>
         )}
       </article>
-      <DynamicCoinChart coinSymbol={coinSymbol} />
+      {isVisible && <DynamicCoinChart coinSymbol={coinSymbol} />}
     </section>
   );
 };

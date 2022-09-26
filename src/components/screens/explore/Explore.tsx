@@ -14,7 +14,7 @@ const Explore: FC = () => {
     <section className="container">
       <PageTitle>Latest crypto news</PageTitle>
       {isLoading && (
-        <div className="grid gap-11 grid-cols-3">
+        <div className="grid gap-11 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           <SkeletonLoader height={580} />
           <SkeletonLoader height={580} />
           <SkeletonLoader height={580} />
