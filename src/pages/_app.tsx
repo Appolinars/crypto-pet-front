@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app';
 import dynamic from 'next/dynamic';
 import NextNProgress from 'nextjs-progressbar';
-import { ToastContainer, ToastContainerProps } from 'react-toastify';
+import { ToastContainerProps } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { TypeComponentAuthFields } from 'src/shared/types/authTypes';
 

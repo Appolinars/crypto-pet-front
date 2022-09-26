@@ -1,9 +1,9 @@
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { FC } from 'react';
-
 import { IUser } from 'src/shared/types/authTypes';
 
-import GeneratedAvatar from './GeneratedAvatar';
+const DynamicGeneratedAvatar = dynamic(() => import('./GeneratedAvatar'));
 
 const Avatar: FC<{ user: IUser; className?: string }> = ({ user, className }) => {
   return (
@@ -21,7 +21,7 @@ const Avatar: FC<{ user: IUser; className?: string }> = ({ user, className }) =>
           />
         </div>
       ) : (
-        <GeneratedAvatar userId={user._id} username={user.username} className={className} />
+        <DynamicGeneratedAvatar userId={user._id} username={user.username} className={className} />
       )}
     </>
   );

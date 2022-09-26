@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { FC, useEffect, useRef, useState } from 'react';
 
@@ -7,9 +8,9 @@ import { useGetCoinQuery } from '@/services/crypto/cryptoService';
 
 import { useOnScreen } from '@/hooks/useOnScreen';
 
-import CoinChart from '../coinChart/CoinChart';
-
 import CoinSectionInfo from './CoinSectionInfo';
+
+const DynamicCoinChart = dynamic(() => import('../coinChart/CoinChart'));
 
 const CoinSection: FC<{ coinSymbol: string; coinTitle: string }> = ({ coinSymbol, coinTitle }) => {
   const [skip, setSkip] = useState<boolean>(true);
@@ -60,7 +61,7 @@ const CoinSection: FC<{ coinSymbol: string; coinTitle: string }> = ({ coinSymbol
           <div className="text-2xl text-red-500">Something went wrong. Please try again later.</div>
         )}
       </article>
-      <CoinChart coinSymbol={coinSymbol} />
+      <DynamicCoinChart coinSymbol={coinSymbol} />
     </section>
   );
 };

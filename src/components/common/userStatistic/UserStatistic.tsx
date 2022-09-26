@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { FC, useEffect } from 'react';
 
@@ -13,9 +14,9 @@ import {
 import { useAppDispatch, useAppSelector } from '@/hooks/redux';
 import { useToastError } from '@/hooks/useToastError';
 
-import NotesChart from '../notesChart/NotesChart';
-
 import UserStatisticItem from './UserStatisticItem';
+
+const DynamicNotesChart = dynamic(() => import('../notesChart/NotesChart'));
 
 const UserStatistic: FC = () => {
   const statistic = useAppSelector(statisticSelector);
@@ -68,7 +69,7 @@ const UserStatistic: FC = () => {
           </div>
         )}
       </div>
-      <NotesChart />
+      <DynamicNotesChart />
     </>
   );
 };
