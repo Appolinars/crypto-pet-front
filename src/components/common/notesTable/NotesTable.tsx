@@ -5,7 +5,7 @@ import Table from '@/components/ui/table/Table';
 
 import { useCoinPriceQuery } from '@/services/crypto/cryptoService';
 
-import { INotesTable } from './NotesTable.intergace';
+import { INotesTable } from './NotesTable.interface';
 import NotesTableItem from './NotesTableItem';
 
 const NotesTable: FC<INotesTable> = ({ notesList, isLoading }) => {

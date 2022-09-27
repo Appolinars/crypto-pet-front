@@ -7,26 +7,33 @@ import { isNoteDeletingSelector } from '@/redux/note/noteSelectors';
 
 import { useAppDispatch, useAppSelector } from '@/hooks/redux';
 
-import CloseIcon from '@/svg/close.svg';
+import { INotesTableItem } from './NotesTable.interface';
 
-import { INotesTableItem } from './NotesTable.intergace';
+import CloseIcon from '@/svg/close.svg';
 
 const NotesTableItem: FC<INotesTableItem> = ({ note, coinPrice }) => {
   const dispatch = useAppDispatch();
 
   const isDeleting = useAppSelector(isNoteDeletingSelector);
 
-  const profitPercentage = useMemo(
-    () => ((+note.price / coinPrice) * 100 - 100).toFixed(2),
-    [note.price, coinPrice]
-  );
+  const profitPercentage = useMemo(() => {
+    const balance = (+note.price / coinPrice) * 100 - 100;
+
+    if (balance > 0) {
+      return `${balance.toFixed(2)}`;
+    } else if (balance < 0) {
+      return `+${balance.toFixed(2).toString().substring(1)}`;
+    }
+
+    return '0';
+  }, [note.price, coinPrice]);
 
   const profit = useMemo(() => {
     const diference = coinPrice - +note.price;
 
-    if (diference > 0) {
-      return `-$${diference.toFixed(2)}`;
-    } else if (diference < 0) {
+    if (diference < 0) {
+      return `${diference.toFixed(2)}$`;
+    } else if (diference > 0) {
       return `+$${diference.toFixed(2).toString().substring(1)}`;
     }
 
@@ -53,7 +60,7 @@ const NotesTableItem: FC<INotesTableItem> = ({ note, coinPrice }) => {
         {note.amount}
         <span className="block opacity-70 text-xs">${(+note.price * +note.amount).toFixed(2)}</span>
       </td>
-      <td className={+note.price < coinPrice ? 'text-red-500' : 'text-green-500'}>
+      <td className={+note.price > coinPrice ? 'text-red-500' : 'text-green-500'}>
         {profitPercentage}%<span className="block opacity-90 text-xs">{profit}</span>
       </td>
       <td>
