@@ -44,6 +44,10 @@ export const noteSlice = createSlice({
         isDeleting: false,
       };
     },
+    logoutReset: (state) => {
+      state.allNotes.list = [];
+      state.statistic.info = null;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -99,6 +103,6 @@ export const noteSlice = createSlice({
   },
 });
 
-export const { resetNewNote, resetAllNotesStates } = noteSlice.actions;
+export const { resetNewNote, resetAllNotesStates, logoutReset } = noteSlice.actions;
 
 export default noteSlice.reducer;

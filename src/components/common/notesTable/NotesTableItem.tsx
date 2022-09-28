@@ -9,7 +9,7 @@ import { useAppDispatch, useAppSelector } from '@/hooks/redux';
 
 import { INotesTableItem } from './NotesTable.interface';
 
-import CloseIcon from '@/svg/close.svg';
+import TrashIcon from '@/svg/trash.svg';
 
 const NotesTableItem: FC<INotesTableItem> = ({ note, coinPrice }) => {
   const dispatch = useAppDispatch();
@@ -73,7 +73,7 @@ const NotesTableItem: FC<INotesTableItem> = ({ note, coinPrice }) => {
           {isDeleting ? (
             <Loader />
           ) : (
-            <CloseIcon className="stroke-red-700 transition-transform will-change-transform group-hover:rotate-90" />
+            <TrashIcon className="stroke-red-700 transition-transform will-change-transform group-hover:scale-125" />
           )}
         </button>
       </td>

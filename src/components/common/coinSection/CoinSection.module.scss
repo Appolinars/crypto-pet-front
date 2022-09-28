@@ -13,9 +13,9 @@
 
   li {
     font-size: 15px;
-    color: $color-dark-primary;
+    color: $color-light-primary;
     padding: 5px;
-    background-color: #b6b6b6;
+    background-color: rgba($color: #0f1a2a, $alpha: 0.5);
     border-radius: 5px;
 
     @media (min-width: 768px) {

@@ -7,6 +7,7 @@ import Avatar from '@/components/ui/avatar/Avatar';
 import Burger from '@/components/ui/burger/Burger';
 
 import { logout } from '@/redux/auth/authActions';
+import { logoutReset } from '@/redux/note/noteSlice';
 
 import { useAppDispatch } from '@/hooks/redux';
 import { useAuth } from '@/hooks/useAuth';
@@ -45,6 +46,7 @@ const Navbar: FC = () => {
 
   const handleLogout = () => {
     dispatch(logout());
+    dispatch(logoutReset());
     if (burgerActive) setBurgerActive(false);
   };
 
